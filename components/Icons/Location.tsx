@@ -1,6 +1,6 @@
-import React, { SVGProps } from "react";
+import React, { SVGProps, memo } from "react";
 
-const SvgLocation = (props: SVGProps<SVGSVGElement>) => {
+const Location: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="30px"
@@ -21,4 +21,4 @@ const SvgLocation = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default React.memo(SvgLocation);
+export default memo(Location);

@@ -1,6 +1,6 @@
-import React, { SVGProps } from "react";
+import React, { SVGProps, memo } from "react";
 
-const SvgFlame = (props: SVGProps<SVGSVGElement>) => {
+const Flame: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       fill="#000000"
@@ -28,4 +28,4 @@ const SvgFlame = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default React.memo(SvgFlame);
+export default memo(Flame);

@@ -1,9 +1,14 @@
 import Link from "next/link";
 
-export default function Home() {
+import { NewAdvert as NewAdvertContainer } from "@app/containers";
+
+export default function NewAdvert() {
   return (
-    <Link href="/">
-      <button>New Adverts</button>
-    </Link>
+    <div>
+      <Link href="/">
+        <button>New Adverts</button>
+      </Link>
+      <NewAdvertContainer.Form />
+    </div>
   );
 }

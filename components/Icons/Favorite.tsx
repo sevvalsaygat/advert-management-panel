@@ -1,6 +1,6 @@
-import React, { SVGProps } from "react";
+import React, { SVGProps, memo } from "react";
 
-const SvgFavorite = (props: SVGProps<SVGSVGElement>) => {
+const Favorite: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       width="30px"
@@ -19,4 +19,4 @@ const SvgFavorite = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default React.memo(SvgFavorite);
+export default memo(Favorite);
