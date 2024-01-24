@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useForm, FormProvider } from "react-hook-form";
 
 import { Form, Button } from "@app/components";
-
 import { NewAdvert as NewAdvertContainer } from "@app/containers";
 
 type IFormType = {
@@ -24,7 +23,6 @@ export default function NewAdvert() {
   });
 
   const { handleSubmit, reset } = useFormMethods;
-
   const onSubmit = (data: IFormType) => {
     console.log(data);
     reset();

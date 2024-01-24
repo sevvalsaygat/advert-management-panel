@@ -1,10 +1,7 @@
 "use client";
 
-import Link from "next/link";
-
 import React from "react";
-
-import { Button } from "@app/components";
+import Link from "next/link";
 
 type HeaderPropTypes = {};
 

@@ -1,13 +1,9 @@
 "use client";
 
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-
-const queryClient = new QueryClient();
+import React from "react";
 
 const ClientProviders: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
+  return <React.Fragment>{children}</React.Fragment>;
 };
 
 export default ClientProviders;
