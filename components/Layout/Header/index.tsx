@@ -12,7 +12,6 @@ const Header: React.FC<HeaderPropTypes> = () => {
   const SCOPE_OPTIONS = {
     scope: "components.Layout.Header",
   };
-
   const { t, changeLocale } = useLocale();
 
   return (

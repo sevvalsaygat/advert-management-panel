@@ -10,7 +10,6 @@ const ListItem: React.FC<ListItemPropTypes> = () => {
   const SCOPE_OPTIONS = {
     scope: "containers.Home.ListItem",
   };
-
   const { t } = useLocale();
 
   return (

@@ -19,9 +19,7 @@ const Form: React.FC<FormPropTypes> = () => {
   const SCOPE_OPTIONS = {
     scope: "containers.NewAdvert.Form",
   };
-
   const { t } = useLocale();
-
   const useFormMethods = useForm<IFormType>({
     defaultValues: {
       title: "",

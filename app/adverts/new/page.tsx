@@ -7,9 +7,8 @@ import { useLocale } from "@app/hooks";
 
 export default function NewAdvert() {
   const SCOPE_OPTIONS = {
-    scope: "pages.NewAdvert",
+    scope: "pages.Adverts.New",
   };
-
   const { t } = useLocale();
 
   return (

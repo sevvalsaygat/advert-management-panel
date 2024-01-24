@@ -9,7 +9,6 @@ export default function Home() {
   const SCOPE_OPTIONS = {
     scope: "pages.Home",
   };
-
   const { t } = useLocale();
 
   return (

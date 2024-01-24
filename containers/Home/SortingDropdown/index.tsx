@@ -18,7 +18,6 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
   const SCOPE_OPTIONS = {
     scope: "containers.Home.SortingDropdown",
   };
-
   const { t } = useLocale();
 
   const [sortBy, setSortBy] = useState<keyof typeof FILTER_OPTIONS | null>(

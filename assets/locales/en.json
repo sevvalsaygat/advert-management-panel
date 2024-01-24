@@ -51,9 +51,11 @@
         "homePageShowcase": "Home Page Showcase"
       }
     },
-    "NewAdvert": {
-      "labels": {
-        "addNewAdvert": "Add New Advert"
+    "Adverts": {
+      "New": {
+        "labels": {
+          "addNewAdvert": "Add New Advert"
+        }
       }
     }
   }
