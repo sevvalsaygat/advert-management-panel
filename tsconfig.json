@@ -23,7 +23,8 @@
       "@app/hooks": ["./hooks"],
       "@app/hooks/*": ["./hooks/*"],
       "@app/containers": ["./containers"],
-      "@app/stores": ["./stores"]
+      "@app/stores": ["./stores"],
+      "@app/constants": ["./constants"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

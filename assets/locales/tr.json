@@ -1,0 +1,60 @@
+{
+  "containers": {
+    "Home": {
+      "ListItem": {
+        "labels": {
+          "numberOfFavorites": "Toplam Favori Sayısı:",
+          "lastUpdate": "Son Güncelleme",
+          "urgent": "Acil"
+        }
+      },
+      "SortingDropdown": {
+        "labels": {
+          "sortBy": "Sırala",
+          "sortByLastAdded": "Sırala (Son Eklenen)",
+          "sortByFavoriteCount": "Sırala (Favori Sayısı)"
+        }
+      }
+    },
+    "NewAdvert": {
+      "Form": {
+        "form": {
+          "title": {
+            "label": "İlan Başlığı",
+            "placeholder": "İlan Başlığını Yazın"
+          },
+          "image": {
+            "label": "İlan Kapak Görseli"
+          },
+          "isUrgent": {
+            "label": "Acil mi?"
+          }
+        },
+        "actions": {
+          "save": "KAYDET"
+        }
+      }
+    }
+  },
+  "components": {
+    "Layout": {
+      "Header": {
+        "actions": {
+          "newAdvert": "Yeni İlan Ekle"
+        }
+      }
+    }
+  },
+  "pages": {
+    "Home": {
+      "labels": {
+        "homePageShowcase": "Ana Sayfa Vitrini"
+      }
+    },
+    "NewAdvert": {
+      "labels": {
+        "addNewAdvert": "Yeni İlan Ekle"
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 
 import { Icons } from "@app/components";
+import { useLocale } from "@app/hooks";
 
 const FILTER_OPTIONS = {
   LAST_ADDED: "LAST_ADDED",
@@ -14,20 +15,26 @@ const FILTER_OPTIONS = {
 type SortingDropdownPropTypes = {};
 
 const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
+  const SCOPE_OPTIONS = {
+    scope: "containers.Home.SortingDropdown",
+  };
+
+  const { t } = useLocale();
+
   const [sortBy, setSortBy] = useState<keyof typeof FILTER_OPTIONS | null>(
     null
   );
 
   function getLabel() {
     if (sortBy === FILTER_OPTIONS.LAST_ADDED) {
-      return "Sort By (Last Added)";
+      return t("labels.sortByLastAdded", SCOPE_OPTIONS);
     }
 
     if (sortBy === FILTER_OPTIONS.NUMBER_OF_FAVORITE) {
-      return "Sort By (Number Of Favorite)";
+      return t("labels.sortByFavoriteCount", SCOPE_OPTIONS);
     }
 
-    return "Sort By";
+    return t("labels.sortBy", SCOPE_OPTIONS);
   }
 
   const label = getLabel();
@@ -59,7 +66,7 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
                     active ? "bg-gray-300 text-black" : "text-black"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                 >
-                  Sort By (Last Added)
+                  {t("labels.sortByLastAdded", SCOPE_OPTIONS)}
                 </button>
               )}
             </Menu.Item>
@@ -73,7 +80,7 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
                     active ? "bg-gray-300 text-black" : "text-black"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                 >
-                  Sort By (Number of Favorite)
+                  {t("labels.sortByFavoriteCount", SCOPE_OPTIONS)}
                 </button>
               )}
             </Menu.Item>

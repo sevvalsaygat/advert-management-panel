@@ -2,8 +2,10 @@
 
 import React from "react";
 
+import { LocaleProvider } from "@app/hooks/useLocale";
+
 const ClientProviders: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return <React.Fragment>{children}</React.Fragment>;
+  return <LocaleProvider>{children}</LocaleProvider>;
 };
 
 export default ClientProviders;
