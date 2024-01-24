@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import React from "react";
 
 import { Button } from "@app/components";
@@ -13,7 +15,12 @@ const Header: React.FC<HeaderPropTypes> = () => {
         <div className="flex flex-row gap-3 ml-2 text-white">HEADER</div>
       </div>
       <div className="flex flex-row items-center gap-3">
-        <Button onClick={() => {}} variant="primary" title="Add New Advert" />
+        <Link
+          className="cursor-pointer py-2 px-4 border-transparent w-fit bg-lime-700 text-white text-sm font-normal rounded-sm hover:bg-green-600"
+          href="/adverts/new"
+        >
+          Add New Advert
+        </Link>
       </div>
     </div>
   );
