@@ -1,0 +1,62 @@
+{
+  "containers": {
+    "Home": {
+      "ListItem": {
+        "labels": {
+          "numberOfFavorites": "Total Number Of Favorites:",
+          "lastUpdate": "Last Update",
+          "urgent": "Urgent"
+        }
+      },
+      "SortingDropdown": {
+        "labels": {
+          "sortBy": "Sort By",
+          "sortByLastAdded": "Sort By (Last Added)",
+          "sortByFavoriteCount": "Sort By (Number of Favorite)"
+        }
+      }
+    },
+    "NewAdvert": {
+      "Form": {
+        "form": {
+          "title": {
+            "label": "Advert Title",
+            "placeholder": "Write The Advert Title"
+          },
+          "image": {
+            "label": "Advert Cover Image"
+          },
+          "isUrgent": {
+            "label": "Is Urgent?"
+          }
+        },
+        "actions": {
+          "save": "SAVE"
+        }
+      }
+    }
+  },
+  "components": {
+    "Layout": {
+      "Header": {
+        "actions": {
+          "newAdvert": "Add New Advert"
+        }
+      }
+    }
+  },
+  "pages": {
+    "Home": {
+      "labels": {
+        "homePageShowcase": "Home Page Showcase"
+      }
+    },
+    "Adverts": {
+      "New": {
+        "labels": {
+          "addNewAdvert": "Add New Advert"
+        }
+      }
+    }
+  }
+}
