@@ -42,7 +42,7 @@ const Switch: React.FC<SwitchPropTypes> = ({
   return (
     <React.Fragment>
       {label && (
-        <label className="flex flex-row gap-2 items-center text-sm font-semibold leading-6 text-purple-900">
+        <label className="flex flex-row gap-2 items-center text-xs font-semibold leading-6 text-purple-700">
           {label}
         </label>
       )}
@@ -60,21 +60,20 @@ const Switch: React.FC<SwitchPropTypes> = ({
             <HeadlessSwitch
               checked={field.value}
               onChange={field.onChange}
-              className={`${field.value ? "bg-teal-900" : "bg-teal-700"}
-          relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/75`}
+              className={`${field.value ? "bg-purple-900" : "bg-purple-100"}
+          relative inline-flex h-[24px] w-[60px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white/75`}
             >
-              <span className="sr-only">Use setting</span>
               <span
                 aria-hidden="true"
                 className={`${field.value ? "translate-x-9" : "translate-x-0"}
-            pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+            pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
               />
             </HeadlessSwitch>
           )}
         />
       </div>
       {fieldError && (
-        <div className="absolute mt-20 ml-1 text-rose-500 text-xs font-normal">
+        <div className="fixed text-rose-800 text-xs font-sans">
           {fieldError.message as string}
         </div>
       )}

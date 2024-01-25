@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 import { useForm, FormProvider } from "react-hook-form";
 
@@ -35,30 +36,50 @@ const Form: React.FC<FormPropTypes> = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <FormProvider {...useFormMethods}>
-        <FormComponent.Input
-          name="title"
-          variant="primary"
-          label={t("form.title.label", SCOPE_OPTIONS)}
-          placeholder={t("form.title.placeholder", SCOPE_OPTIONS)}
-        />
-        <FormComponent.Input
-          type="file"
-          name="image"
-          variant="primary"
-          label={t("form.image.label", SCOPE_OPTIONS)}
-        />
-        <FormComponent.Switch
-          name="isUrgent"
-          label={t("form.isUrgent.label", SCOPE_OPTIONS)}
-        />
-        <Button
-          onClick={handleSubmit(onSubmit)}
-          variant="primary"
-          title={t("actions.save", SCOPE_OPTIONS)}
-        />
-      </FormProvider>
+    <div className="flex flex-row items-center justify-center mt-10 shadow-lg rounded-lg px-14 py-14 gap-16 w-8/12">
+      <Image src="/images/shopping.png" width={400} height={400} alt="logo" />
+      <div className="flex flex-col w-full">
+        <FormProvider {...useFormMethods}>
+          <div>
+            <FormComponent.Input
+              name="title"
+              variant="primary"
+              label={t("form.title.label", SCOPE_OPTIONS)}
+              placeholder={t("form.title.placeholder", SCOPE_OPTIONS)}
+              rules={{
+                required: "This field must be filled out!",
+              }}
+            />
+          </div>
+          <div>
+            <FormComponent.Input
+              type="file"
+              name="image"
+              variant="primary"
+              label={t("form.image.label", SCOPE_OPTIONS)}
+              rules={{
+                required: "This field must be filled out!",
+              }}
+            />
+          </div>
+          <div className="flex flex-row justify-between ml-2">
+            <div>
+              <FormComponent.Switch
+                name="isUrgent"
+                label={t("form.isUrgent.label", SCOPE_OPTIONS)}
+                rules={{
+                  required: "This field must be filled out!",
+                }}
+              />
+            </div>
+            <Button
+              onClick={handleSubmit(onSubmit)}
+              variant="primary"
+              title={t("actions.save", SCOPE_OPTIONS)}
+            />
+          </div>
+        </FormProvider>
+      </div>
     </div>
   );
 };

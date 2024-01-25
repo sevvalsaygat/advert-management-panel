@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import { NewAdvert as NewAdvertContainer } from "@app/containers";
 import { useLocale } from "@app/hooks";
 
@@ -12,11 +10,15 @@ export default function NewAdvert() {
   const { t } = useLocale();
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Link href="/">
-        <div>{t("labels.addNewAdvert", SCOPE_OPTIONS)}</div>
-      </Link>
-      <NewAdvertContainer.Form />
+    <div className="flex flex-col">
+      <div className="flex border-b my-10 mx-40">
+        <div className="flex mx-20 mb-2 mt-5 text-lg font-mono text-purple-900">
+          {t("labels.addNewAdvert", SCOPE_OPTIONS)}
+        </div>
+      </div>
+      <div className="flex items-center justify-center">
+        <NewAdvertContainer.Form />
+      </div>
     </div>
   );
 }
