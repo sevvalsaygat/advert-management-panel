@@ -47,7 +47,7 @@ const Form: React.FC<FormPropTypes> = () => {
               label={t("form.title.label", SCOPE_OPTIONS)}
               placeholder={t("form.title.placeholder", SCOPE_OPTIONS)}
               rules={{
-                required: "This field must be filled out!",
+                required: t("form.title.rules.required", SCOPE_OPTIONS),
               }}
             />
           </div>
@@ -58,7 +58,7 @@ const Form: React.FC<FormPropTypes> = () => {
               variant="primary"
               label={t("form.image.label", SCOPE_OPTIONS)}
               rules={{
-                required: "This field must be filled out!",
+                required: t("form.image.rules.required", SCOPE_OPTIONS),
               }}
             />
           </div>
@@ -68,7 +68,7 @@ const Form: React.FC<FormPropTypes> = () => {
                 name="isUrgent"
                 label={t("form.isUrgent.label", SCOPE_OPTIONS)}
                 rules={{
-                  required: "This field must be filled out!",
+                  required: t("form.isUrgent.rules.required", SCOPE_OPTIONS),
                 }}
               />
             </div>
