@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ClientProviders>
-          <div className="flex flex-col">
+          <div className="flex flex-col h-screen">
             <Layout.Header />
             {children}
           </div>

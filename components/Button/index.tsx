@@ -25,7 +25,7 @@ const Button: React.FC<ButtonPropTypes> = ({
     <button
       onClick={onClick}
       className={cn(className, {
-        "cursor-pointer py-2 px-4 border-transparent w-fit bg-lime-700 text-white text-sm font-normal rounded-sm hover:bg-green-600":
+        "cursor-pointer px-8 border-transparent mt-2 bg-purple-900 text-white text-sm font-light rounded-xl hover:bg-purple-700":
           variant === "primary",
       })}
     >

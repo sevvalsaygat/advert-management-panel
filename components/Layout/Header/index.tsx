@@ -2,9 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { useLocale } from "@app/hooks";
 import { LANGUAGES } from "@app/constants";
+import { Icons } from "@app/components";
 
 type HeaderPropTypes = {};
 
@@ -15,20 +17,34 @@ const Header: React.FC<HeaderPropTypes> = () => {
   const { t, changeLocale } = useLocale();
 
   return (
-    <div className="flex flex-row justify-between w-full bg-gray-500 shadow-sm h-fit sticky p-3 px-28">
+    <div className="flex flex-row justify-between w-full bg-white border-b shadow-sm h-fit sticky p-3 px-28">
       <div className="flex flex-row items-center gap-6">
-        <div className="flex flex-row gap-3 ml-2 text-white">HEADER</div>
-      </div>
-      <div className="flex flex-row items-center gap-3">
-        <Link
-          className="cursor-pointer py-2 px-4 border-transparent w-fit bg-lime-700 text-white text-sm font-normal rounded-sm hover:bg-green-600"
-          href="/adverts/new"
-        >
-          {t("actions.newAdvert", SCOPE_OPTIONS)}
+        <Link href="/">
+          <Image src="/images/logo.png" width={45} height={45} alt="logo" />
         </Link>
-        <div className="flex flex-row gap-4">
-          <button onClick={() => changeLocale(LANGUAGES.TURKISH)}>TR</button>
-          <button onClick={() => changeLocale(LANGUAGES.ENGLISH)}>EN</button>
+      </div>
+      <div className="flex flex-row items-center gap-16">
+        <div>
+          <Link
+            className="cursor-pointer py-3 rounded-lg px-4 border-transparent w-fit bg-purple-900 text-white text-sm font-light hover:bg-purple-700"
+            href="/adverts/new"
+          >
+            {t("actions.newAdvert", SCOPE_OPTIONS)}
+          </Link>
+        </div>
+        <div className="flex flex-row gap-2">
+          <button
+            className="border rounded-full"
+            onClick={() => changeLocale(LANGUAGES.TURKISH)}
+          >
+            <Icons.TurkeyFlag />
+          </button>
+          <button
+            className="border rounded-full"
+            onClick={() => changeLocale(LANGUAGES.ENGLISH)}
+          >
+            <Icons.EnglandFlag />
+          </button>
         </div>
       </div>
     </div>

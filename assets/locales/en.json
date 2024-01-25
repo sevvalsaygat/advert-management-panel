@@ -21,13 +21,22 @@
         "form": {
           "title": {
             "label": "Advert Title",
-            "placeholder": "Write The Advert Title"
+            "placeholder": "Write The Advert Title",
+            "rules": {
+              "required": "This field must be filled out!"
+            }
           },
           "image": {
-            "label": "Advert Cover Image"
+            "label": "Advert Cover Image",
+            "rules": {
+              "required": "This field must be filled out!"
+            }
           },
           "isUrgent": {
-            "label": "Is Urgent?"
+            "label": "Is Urgent?",
+            "rules": {
+              "required": "This field must be filled out!"
+            }
           }
         },
         "actions": {

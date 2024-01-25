@@ -21,13 +21,22 @@
         "form": {
           "title": {
             "label": "İlan Başlığı",
-            "placeholder": "İlan Başlığını Yazın"
+            "placeholder": "İlan Başlığını Yazın",
+            "rules": {
+              "required": "Bu alan doldurulmak zorundadır!"
+            }
           },
           "image": {
-            "label": "İlan Kapak Görseli"
+            "label": "İlan Kapak Görseli",
+            "rules": {
+              "required": "Bu alan doldurulmak zorundadır!"
+            }
           },
           "isUrgent": {
-            "label": "Acil mi?"
+            "label": "Acil mi?",
+            "rules": {
+              "required": "Bu alan doldurulmak zorundadır!"
+            }
           }
         },
         "actions": {
