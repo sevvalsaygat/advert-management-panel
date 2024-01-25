@@ -1,26 +1,23 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 
 import { useForm, FormProvider } from "react-hook-form";
 
 import { Form as FormComponent, Button } from "@app/components";
 import { useLocale } from "@app/hooks";
+import { useAdvertStore } from "@app/stores";
 
 type FormPropTypes = {};
-
-type IFormType = {
-  title: string;
-  image: string;
-  isUrgent: boolean;
-};
 
 const Form: React.FC<FormPropTypes> = () => {
   const SCOPE_OPTIONS = {
     scope: "containers.NewAdvert.Form",
   };
   const { t } = useLocale();
-  const useFormMethods = useForm<IFormType>({
+  const router = useRouter();
+  const useFormMethods = useForm<IAdvertFormType>({
     defaultValues: {
       title: "",
       image: "",
@@ -29,9 +26,12 @@ const Form: React.FC<FormPropTypes> = () => {
   });
 
   const { handleSubmit, reset } = useFormMethods;
-  const onSubmit = (data: IFormType) => {
-    console.log(data);
+  const addAdvert = useAdvertStore((state) => state.addAdvert);
+
+  const onSubmit = (data: IAdvertFormType) => {
+    addAdvert(data);
     reset();
+    router.push("/");
   };
 
   return (

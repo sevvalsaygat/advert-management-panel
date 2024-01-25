@@ -6,6 +6,7 @@ import { Menu, Transition } from "@headlessui/react";
 
 import { Icons } from "@app/components";
 import { useLocale } from "@app/hooks";
+import { useAdvertStore } from "@app/stores";
 
 const FILTER_OPTIONS = {
   LAST_ADDED: "LAST_ADDED",
@@ -19,6 +20,10 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
     scope: "containers.Home.SortingDropdown",
   };
   const { t } = useLocale();
+
+  const { sortByFavoriteCount, sortByCreatedAt } = useAdvertStore(
+    (state) => state
+  );
 
   const [sortBy, setSortBy] = useState<keyof typeof FILTER_OPTIONS | null>(
     null
@@ -60,7 +65,10 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => setSortBy(FILTER_OPTIONS.LAST_ADDED)}
+                  onClick={() => {
+                    setSortBy(FILTER_OPTIONS.LAST_ADDED);
+                    sortByCreatedAt();
+                  }}
                   className={`${
                     active ? "bg-gray-300 text-black" : "text-black"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
@@ -74,7 +82,10 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => setSortBy(FILTER_OPTIONS.NUMBER_OF_FAVORITE)}
+                  onClick={() => {
+                    setSortBy(FILTER_OPTIONS.NUMBER_OF_FAVORITE);
+                    sortByFavoriteCount();
+                  }}
                   className={`${
                     active ? "bg-gray-300 text-black" : "text-black"
                   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
