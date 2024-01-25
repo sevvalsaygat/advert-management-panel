@@ -43,7 +43,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
             className="border rounded-full"
             onClick={() => changeLocale(LANGUAGES.ENGLISH)}
           >
-            <Icons.EnglandFlag />
+            <Icons.EnglandFlag className="w-8 h-8" />
           </button>
         </div>
       </div>

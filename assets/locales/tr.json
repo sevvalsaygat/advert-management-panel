@@ -5,7 +5,7 @@
         "labels": {
           "numberOfFavorites": "Toplam Favori Sayısı:",
           "lastUpdate": "Son Güncelleme:",
-          "urgent": "Acil"
+          "urgent": "ACİL"
         }
       },
       "SortingDropdown": {
@@ -33,10 +33,7 @@
             }
           },
           "isUrgent": {
-            "label": "Acil mi?",
-            "rules": {
-              "required": "Bu alan doldurulmak zorundadır!"
-            }
+            "label": "Acil mi?"
           }
         },
         "actions": {

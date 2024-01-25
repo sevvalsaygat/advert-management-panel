@@ -67,9 +67,6 @@ const Form: React.FC<FormPropTypes> = () => {
               <FormComponent.Switch
                 name="isUrgent"
                 label={t("form.isUrgent.label", SCOPE_OPTIONS)}
-                rules={{
-                  required: t("form.isUrgent.rules.required", SCOPE_OPTIONS),
-                }}
               />
             </div>
             <Button

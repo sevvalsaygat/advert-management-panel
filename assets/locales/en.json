@@ -5,7 +5,7 @@
         "labels": {
           "numberOfFavorites": "Total Number Of Favorites:",
           "lastUpdate": "Last Update:",
-          "urgent": "Urgent"
+          "urgent": "URGENT"
         }
       },
       "SortingDropdown": {
@@ -33,10 +33,7 @@
             }
           },
           "isUrgent": {
-            "label": "Is Urgent?",
-            "rules": {
-              "required": "This field must be filled out!"
-            }
+            "label": "Is Urgent?"
           }
         },
         "actions": {
