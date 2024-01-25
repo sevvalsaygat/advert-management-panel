@@ -25,7 +25,7 @@ const useAdvertStore = create<UseAdvertStoreType>()(
         },
         sortByFavoriteCount: () => {
           set((state) => ({
-            adverts: state.adverts.sort((a, b) => {
+            adverts: [...state.adverts].sort((a, b) => {
               const favoriteComparison = b.favoriteCount - a.favoriteCount;
 
               if (favoriteComparison === 0) {
@@ -41,7 +41,7 @@ const useAdvertStore = create<UseAdvertStoreType>()(
         },
         sortByCreatedAt: () => {
           set((state) => ({
-            adverts: state.adverts.sort((a, b) => {
+            adverts: [...state.adverts].sort((a, b) => {
               return (
                 new Date(b.createdAt).getTime() -
                 new Date(a.createdAt).getTime()
@@ -89,7 +89,12 @@ const useAdvertStore = create<UseAdvertStoreType>()(
           };
 
           set((state) => ({
-            adverts: [...state.adverts, newAdvert],
+            adverts: [...state.adverts, newAdvert].sort((a, b) => {
+              return (
+                new Date(b.createdAt).getTime() -
+                new Date(a.createdAt).getTime()
+              );
+            }),
           }));
         },
       }),

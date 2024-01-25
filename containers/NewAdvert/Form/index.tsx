@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
+import { useRouter } from "next/navigation";
 
 import { useForm, FormProvider } from "react-hook-form";
 
@@ -15,6 +16,7 @@ const Form: React.FC<FormPropTypes> = () => {
     scope: "containers.NewAdvert.Form",
   };
   const { t } = useLocale();
+  const router = useRouter();
   const useFormMethods = useForm<IAdvertFormType>({
     defaultValues: {
       title: "",
@@ -29,6 +31,7 @@ const Form: React.FC<FormPropTypes> = () => {
   const onSubmit = (data: IAdvertFormType) => {
     addAdvert(data);
     reset();
+    router.push("/");
   };
 
   return (
