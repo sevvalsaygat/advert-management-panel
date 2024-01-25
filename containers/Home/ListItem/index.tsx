@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useLocale } from "@app/hooks";
 import { useAdvertStore } from "@app/stores";
 import { Icons } from "@app/components";
-import { set } from "react-hook-form";
+import { date } from "@app/lib";
 
 type ListItemPropTypes = {
   advert: AdvertType;
@@ -21,15 +21,19 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
     useAdvertStore((state) => state);
 
   return (
-    <div className="group/item cursor-pointer pb-10 hover:bg-zinc-300 hover:bg-opacity-15 rounded-xl">
+    <div className="group/item cursor-pointer h-full hover:bg-zinc-300 hover:bg-opacity-15 rounded-xl">
       <div className="relative inline-block">
-        <Image
-          src="/images/car.jpg"
-          width={400}
-          height={400}
-          alt="logo"
-          className="rounded-t-xl"
-        />
+        <div className="relative ">
+          <Image
+            src={advert.image}
+            width={400}
+            height={400}
+            alt="logo"
+            objectFit="cover"
+            className="rounded-t-xl object-contain"
+          />
+        </div>
+
         <div className="flex flex-col items-center gap-3 absolute top-0 right-0 mr-2 mt-2">
           <button
             onClick={() => {
@@ -50,12 +54,14 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
             </div>
           </button>
         </div>
-        <div className="flex flex-row absolute top-0 left-0 ml-2 mt-2 bg-red-500 w-fit px-2 py-1 pr-3 rounded-full">
-          <Icons.Flame className="text-white w-4 h-4" />
-          <div className="text-white text-xs font-medium mt-0.5">
-            {t("labels.urgent", SCOPE_OPTIONS)}
+        {advert.isUrgent && (
+          <div className="flex flex-row absolute top-0 left-0 ml-2 mt-2 bg-red-500 w-fit px-2 py-1 pr-3 rounded-full">
+            <Icons.Flame className="text-white w-4 h-4" />
+            <div className="text-white text-xs font-medium mt-0.5">
+              {t("labels.urgent", SCOPE_OPTIONS)}
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <div className="flex flex-col mx-4 mt-4 gap-3">
         <div className="text-lg font-semibold text-purple-900">
@@ -74,7 +80,7 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
           <Icons.Calendar className="w-5 h-5 mr-2" />
           <div className="flex flex-row gap-3 text-sm font-sans text-purple-700">
             {t("labels.lastUpdate", SCOPE_OPTIONS)}
-            <div>{advert.updatedAt}</div>
+            <div>{date.formatDate(advert.updatedAt, "YYYY.MM.DD HH:mm")}</div>
           </div>
         </div>
       </div>

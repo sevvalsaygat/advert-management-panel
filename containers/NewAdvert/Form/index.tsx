@@ -52,14 +52,14 @@ const Form: React.FC<FormPropTypes> = () => {
             />
           </div>
           <div>
-            <FormComponent.Input
-              type="file"
+            <FormComponent.FileInput
               name="image"
               variant="primary"
               label={t("form.image.label", SCOPE_OPTIONS)}
               rules={{
                 required: t("form.image.rules.required", SCOPE_OPTIONS),
               }}
+              accept="image/*"
             />
           </div>
           <div className="flex flex-row justify-between ml-2">

@@ -10,7 +10,7 @@ import {
 } from "react-hook-form";
 import cn from "classnames";
 
-type InputPropTypes = {
+type FileInputPropTypes = {
   name: string;
   label?: string;
   rules?:
@@ -19,22 +19,18 @@ type InputPropTypes = {
         "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled"
       >
     | undefined;
-  placeholder?: string;
-  defaultValue?: string;
   variant?: "primary";
   className?: string;
-  type?: "text" | "file";
+  accept?: string;
 };
 
-const Input: React.FC<InputPropTypes> = ({
+const FileInput: React.FC<FileInputPropTypes> = ({
   name,
   label,
   rules,
-  placeholder,
-  defaultValue = "",
   variant,
   className,
-  type = "text",
+  accept,
 }) => {
   const {
     control,
@@ -59,12 +55,22 @@ const Input: React.FC<InputPropTypes> = ({
           name={name}
           control={control}
           rules={rules}
-          defaultValue={defaultValue}
           render={({ field }) => (
             <input
-              {...field}
-              type={type}
-              placeholder={placeholder}
+              onChange={(e) => {
+                if (e.target.files) {
+                  const file = e.target.files[0];
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                    field.onChange(reader.result);
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }}
+              onBlur={field.onBlur}
+              name={field.name}
+              type="file"
+              accept={accept}
               className={cn(className, {
                 "flex flex-col w-full mb-10 border border-slate-500 rounded-md p-3 placeholder:text-sm font-light placeholder:text-zinc-600 placeholder:font-light focus:outline-none focus:ring-1 focus:ring- focus:bg-white text-sm":
                   variant === "primary",
@@ -82,4 +88,4 @@ const Input: React.FC<InputPropTypes> = ({
   );
 };
 
-export default Input;
+export default FileInput;
