@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import { useForm, FormProvider } from "react-hook-form";
+import { toast } from "sonner";
 
 import { Form as FormComponent, Button } from "@app/components";
 import { useLocale } from "@app/hooks";
@@ -30,9 +31,14 @@ const Form: React.FC<FormPropTypes> = () => {
   const addAdvert = useAdvertStore((state) => state.addAdvert);
 
   const onSubmit = (data: IAdvertFormType) => {
-    addAdvert(data);
-    reset();
-    router.push("/");
+    try {
+      addAdvert(data);
+      reset();
+      toast.success(t("actions.toast.success", SCOPE_OPTIONS));
+      router.push("/");
+    } catch (error) {
+      toast.error(t("actions.toast.error", SCOPE_OPTIONS));
+    }
   };
 
   return (

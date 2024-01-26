@@ -5,7 +5,10 @@
         "labels": {
           "numberOfFavorites": "Toplam Favori Sayısı:",
           "lastUpdate": "Son Güncelleme:",
-          "urgent": "ACİL"
+          "urgent": "ACİL",
+          "toast": {
+            "success": "İlan silme işlemi başarıyla tamamlandı!"
+          }
         }
       },
       "SortingDropdown": {
@@ -37,7 +40,11 @@
           }
         },
         "actions": {
-          "save": "KAYDET"
+          "save": "KAYDET",
+          "toast": {
+            "success": "İlan başarıyla kaydedildi!",
+            "error": "İlan kaydedilirken bir hata oluştu!"
+          }
         }
       }
     }

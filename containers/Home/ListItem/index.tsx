@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 
+import { toast } from "sonner";
+
 import { useLocale } from "@app/hooks";
 import { useAdvertStore } from "@app/stores";
 import { Icons } from "@app/components";
@@ -23,7 +25,7 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
 
   return (
     <div className="flex flex-col group/item cursor-pointer p-2 hover:bg-zinc-300 hover:bg-opacity-15 rounded-xl gap-4">
-      <div className="relative h-52 w-full rounded-t-xl">
+      <div className="relative h-52 w-full rounded-xl bg-zinc-300 bg-opacity-25 ">
         <Image
           src={advert.image}
           width={0}
@@ -48,6 +50,7 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
           <button
             onClick={() => {
               deleteAdvert(advert.id);
+              toast.success(t("labels.toast.success", SCOPE_OPTIONS));
             }}
           >
             <div className="hidden group-hover/item:block items-center justify-center align-center bg-white hover:bg-white hover:bg-opacity-85 rounded-full p-2 w-fit">
