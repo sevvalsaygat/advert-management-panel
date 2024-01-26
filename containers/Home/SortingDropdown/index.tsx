@@ -44,7 +44,7 @@ const SortingDropdown: React.FC<SortingDropdownPropTypes> = () => {
   const label = getLabel();
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left z-10">
       <div>
         <Menu.Button className="inline-flex w-full items-center justify-center rounded-md bg-slate-600 px-5 py-2 text-sm font-light text-white hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
           <Icons.Filter className="w-5 h-5 mr-2" />

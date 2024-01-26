@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import { useForm, FormProvider } from "react-hook-form";
+import { toast } from "sonner";
 
 import { Form as FormComponent, Button } from "@app/components";
 import { useLocale } from "@app/hooks";
@@ -30,14 +31,25 @@ const Form: React.FC<FormPropTypes> = () => {
   const addAdvert = useAdvertStore((state) => state.addAdvert);
 
   const onSubmit = (data: IAdvertFormType) => {
-    addAdvert(data);
-    reset();
-    router.push("/");
+    try {
+      addAdvert(data);
+      reset();
+      toast.success(t("toast.success", SCOPE_OPTIONS));
+      router.push("/");
+    } catch (error) {
+      toast.error(t("toast.error", SCOPE_OPTIONS));
+    }
   };
 
   return (
-    <div className="flex flex-row items-center justify-center mt-10 shadow-lg rounded-lg px-14 py-14 gap-16 w-8/12">
-      <Image src="/images/shopping.png" width={400} height={400} alt="logo" />
+    <div className="flex flex-row items-center justify-center mt-10 shadow-lg rounded-lg sm:px-14 px-6 py-14 gap-16 sm:w-8/12 w-11/12">
+      <Image
+        src="/images/shopping.png"
+        width={400}
+        height={400}
+        alt="logo"
+        className="hidden lg:block"
+      />
       <div className="flex flex-col w-full">
         <FormProvider {...useFormMethods}>
           <div>
@@ -52,14 +64,14 @@ const Form: React.FC<FormPropTypes> = () => {
             />
           </div>
           <div>
-            <FormComponent.Input
-              type="file"
+            <FormComponent.FileInput
               name="image"
               variant="primary"
               label={t("form.image.label", SCOPE_OPTIONS)}
               rules={{
                 required: t("form.image.rules.required", SCOPE_OPTIONS),
               }}
+              accept="image/*"
             />
           </div>
           <div className="flex flex-row justify-between ml-2">
@@ -67,9 +79,6 @@ const Form: React.FC<FormPropTypes> = () => {
               <FormComponent.Switch
                 name="isUrgent"
                 label={t("form.isUrgent.label", SCOPE_OPTIONS)}
-                rules={{
-                  required: t("form.isUrgent.rules.required", SCOPE_OPTIONS),
-                }}
               />
             </div>
             <Button

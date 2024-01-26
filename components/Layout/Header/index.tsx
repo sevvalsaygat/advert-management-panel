@@ -6,7 +6,6 @@ import Image from "next/image";
 
 import { useLocale } from "@app/hooks";
 import { LANGUAGES } from "@app/constants";
-import { Icons } from "@app/components";
 
 type HeaderPropTypes = {};
 
@@ -17,7 +16,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
   const { t, changeLocale } = useLocale();
 
   return (
-    <div className="flex flex-row justify-between w-full bg-white border-b shadow-sm h-fit sticky p-3 px-28">
+    <div className="flex flex-row justify-between w-full bg-white border-b shadow-sm h-fit sticky p-3 sm:px-28">
       <div className="flex flex-row items-center gap-6">
         <Link href="/">
           <Image src="/images/logo.png" width={45} height={45} alt="logo" />
@@ -33,17 +32,21 @@ const Header: React.FC<HeaderPropTypes> = () => {
           </Link>
         </div>
         <div className="flex flex-row gap-2">
-          <button
-            className="border rounded-full"
-            onClick={() => changeLocale(LANGUAGES.TURKISH)}
-          >
-            <Icons.TurkeyFlag />
+          <button className="" onClick={() => changeLocale(LANGUAGES.TURKISH)}>
+            <Image
+              src="/images/turkeyFlag.png"
+              width={35}
+              height={35}
+              alt="turkeyFlag"
+            />
           </button>
-          <button
-            className="border rounded-full"
-            onClick={() => changeLocale(LANGUAGES.ENGLISH)}
-          >
-            <Icons.EnglandFlag />
+          <button onClick={() => changeLocale(LANGUAGES.ENGLISH)}>
+            <Image
+              src="/images/abdFlag.png"
+              width={35}
+              height={35}
+              alt="abdFlag"
+            />
           </button>
         </div>
       </div>

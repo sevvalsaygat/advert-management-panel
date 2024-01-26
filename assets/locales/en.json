@@ -5,7 +5,10 @@
         "labels": {
           "numberOfFavorites": "Total Number Of Favorites:",
           "lastUpdate": "Last Update:",
-          "urgent": "Urgent"
+          "urgent": "URGENT"
+        },
+        "toast": {
+          "success": "Advert deletion completed successfully!"
         }
       },
       "SortingDropdown": {
@@ -33,14 +36,15 @@
             }
           },
           "isUrgent": {
-            "label": "Is Urgent?",
-            "rules": {
-              "required": "This field must be filled out!"
-            }
+            "label": "Is Urgent?"
           }
         },
         "actions": {
           "save": "SAVE"
+        },
+        "toast": {
+          "success": "Advert has been saved successfully!",
+          "error": "An error occurred while saving the advert!"
         }
       }
     }

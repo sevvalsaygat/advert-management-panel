@@ -4,8 +4,6 @@ import Delete from "./Delete";
 import Location from "./Location";
 import Calendar from "./Calendar";
 import Filter from "./Filter";
-import TurkeyFlag from "./TurkeyFlag";
-import EnglandFlag from "./EnglandFlag";
 
 export default {
   Flame,
@@ -14,6 +12,4 @@ export default {
   Location,
   Calendar,
   Filter,
-  TurkeyFlag,
-  EnglandFlag,
 };

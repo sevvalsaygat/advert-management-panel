@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import ClientProviders from "./clientProviders";
 import "./globals.css";
 
+import { Toaster } from "sonner";
+
 import { Layout } from "@app/components";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,6 +27,7 @@ export default function RootLayout({
           <div className="flex flex-col h-screen">
             <Layout.Header />
             {children}
+            <Toaster richColors closeButton position="top-right" />
           </div>
         </ClientProviders>
       </body>
