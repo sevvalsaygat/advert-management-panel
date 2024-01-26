@@ -34,10 +34,10 @@ const Form: React.FC<FormPropTypes> = () => {
     try {
       addAdvert(data);
       reset();
-      toast.success(t("actions.toast.success", SCOPE_OPTIONS));
+      toast.success(t("toast.success", SCOPE_OPTIONS));
       router.push("/");
     } catch (error) {
-      toast.error(t("actions.toast.error", SCOPE_OPTIONS));
+      toast.error(t("toast.error", SCOPE_OPTIONS));
     }
   };
 

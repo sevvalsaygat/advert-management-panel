@@ -50,7 +50,7 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
           <button
             onClick={() => {
               deleteAdvert(advert.id);
-              toast.success(t("labels.toast.success", SCOPE_OPTIONS));
+              toast.success(t("toast.success", SCOPE_OPTIONS));
             }}
           >
             <div className="hidden group-hover/item:block items-center justify-center align-center bg-white hover:bg-white hover:bg-opacity-85 rounded-full p-2 w-fit">
