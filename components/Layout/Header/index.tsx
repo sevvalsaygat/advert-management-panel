@@ -6,7 +6,6 @@ import Image from "next/image";
 
 import { useLocale } from "@app/hooks";
 import { LANGUAGES } from "@app/constants";
-import { Icons } from "@app/components";
 
 type HeaderPropTypes = {};
 
@@ -33,17 +32,21 @@ const Header: React.FC<HeaderPropTypes> = () => {
           </Link>
         </div>
         <div className="flex flex-row gap-2">
-          <button
-            className="border rounded-full"
-            onClick={() => changeLocale(LANGUAGES.TURKISH)}
-          >
-            <Icons.TurkeyFlag />
+          <button className="" onClick={() => changeLocale(LANGUAGES.TURKISH)}>
+            <Image
+              src="/images/turkeyFlag.png"
+              width={35}
+              height={35}
+              alt="logo"
+            />
           </button>
-          <button
-            className="border rounded-full"
-            onClick={() => changeLocale(LANGUAGES.ENGLISH)}
-          >
-            <Icons.EnglandFlag className="w-8 h-8" />
+          <button onClick={() => changeLocale(LANGUAGES.ENGLISH)}>
+            <Image
+              src="/images/abdFlag.png"
+              width={35}
+              height={35}
+              alt="logo"
+            />
           </button>
         </div>
       </div>
