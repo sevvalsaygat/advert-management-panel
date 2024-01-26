@@ -4,7 +4,7 @@
 
 ## Demo Video
 
-![demovideo](docs/demo.mp4)
+![demovideo](docs/advert.gif)
 
 ## Running the Project
 
