@@ -37,7 +37,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               src="/images/turkeyFlag.png"
               width={35}
               height={35}
-              alt="logo"
+              alt="turkeyFlag"
             />
           </button>
           <button onClick={() => changeLocale(LANGUAGES.ENGLISH)}>
@@ -45,7 +45,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
               src="/images/abdFlag.png"
               width={35}
               height={35}
-              alt="logo"
+              alt="abdFlag"
             />
           </button>
         </div>

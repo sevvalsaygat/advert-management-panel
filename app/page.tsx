@@ -16,9 +16,7 @@ export default function Home() {
           {t("labels.homePageShowcase", SCOPE_OPTIONS)}
         </div>
       </div>
-      <div className="">
-        <HomeContainer.List />
-      </div>
+      <HomeContainer.List />
     </div>
   );
 }
