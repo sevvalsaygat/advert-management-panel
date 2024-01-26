@@ -36,8 +36,14 @@ const Form: React.FC<FormPropTypes> = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center mt-10 shadow-lg rounded-lg px-14 py-14 gap-16 w-8/12">
-      <Image src="/images/shopping.png" width={400} height={400} alt="logo" />
+    <div className="flex flex-row items-center justify-center mt-10 shadow-lg rounded-lg sm:px-14 px-6 py-14 gap-16 sm:w-8/12 w-11/12">
+      <Image
+        src="/images/shopping.png"
+        width={400}
+        height={400}
+        alt="logo"
+        className="hidden lg:block"
+      />
       <div className="flex flex-col w-full">
         <FormProvider {...useFormMethods}>
           <div>

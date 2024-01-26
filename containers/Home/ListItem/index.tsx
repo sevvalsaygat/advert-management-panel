@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 import { useLocale } from "@app/hooks";
@@ -17,23 +17,24 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
     scope: "containers.Home.ListItem",
   };
   const { t } = useLocale();
-  const { incrementFavoriteCount, decrementFavoriteCount, deleteAdvert } =
-    useAdvertStore((state) => state);
+  const { incrementFavoriteCount, deleteAdvert } = useAdvertStore(
+    (state) => state
+  );
 
   return (
-    <div className="group/item cursor-pointer h-full hover:bg-zinc-300 hover:bg-opacity-15 rounded-xl">
-      <div className="relative inline-block">
-        <div className="relative ">
-          <Image
-            src={advert.image}
-            width={400}
-            height={400}
-            alt="logo"
-            objectFit="cover"
-            className="rounded-t-xl object-contain"
-          />
-        </div>
-
+    <div className="flex flex-col group/item cursor-pointer p-2 hover:bg-zinc-300 hover:bg-opacity-15 rounded-xl gap-4">
+      <div className="relative h-52 w-full rounded-t-xl">
+        <Image
+          src={advert.image}
+          width={0}
+          height={0}
+          alt="logo"
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+          className="object-contain"
+        />
         <div className="flex flex-col items-center gap-3 absolute top-0 right-0 mr-2 mt-2">
           <button
             onClick={() => {
@@ -63,11 +64,10 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
           </div>
         )}
       </div>
-      <div className="flex flex-col mx-4 mt-4 gap-3">
-        <div className="text-lg font-semibold text-purple-900">
+      <div className="flex flex-col px-3 py-2 gap-3">
+        <div className="text-lg font-semibold text-purple-900 truncate">
           {advert.title}
         </div>
-
         <div className="flex flex-row">
           <Icons.Location className="w-5 h-5 text-purple-900 mr-2" />
           <div className="flex flex-row gap-3 text-sm font-sans text-purple-700">
@@ -75,7 +75,6 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
             <div>{advert.favoriteCount}</div>
           </div>
         </div>
-
         <div className="flex flex-row">
           <Icons.Calendar className="w-5 h-5 mr-2" />
           <div className="flex flex-row gap-3 text-sm font-sans text-purple-700">
@@ -84,14 +83,6 @@ const ListItem: React.FC<ListItemPropTypes> = ({ advert }) => {
           </div>
         </div>
       </div>
-
-      {/* <button
-        onClick={() => {
-          decrementFavoriteCount(advert.id);
-        }}
-      >
-        Toplam
-      </button> */}
     </div>
   );
 };

@@ -17,7 +17,7 @@ const Header: React.FC<HeaderPropTypes> = () => {
   const { t, changeLocale } = useLocale();
 
   return (
-    <div className="flex flex-row justify-between w-full bg-white border-b shadow-sm h-fit sticky p-3 px-28">
+    <div className="flex flex-row justify-between w-full bg-white border-b shadow-sm h-fit sticky p-3 sm:px-28">
       <div className="flex flex-row items-center gap-6">
         <Link href="/">
           <Image src="/images/logo.png" width={45} height={45} alt="logo" />

@@ -12,7 +12,7 @@ export default function NewAdvert() {
   return (
     <div className="flex flex-col">
       <div className="flex border-b my-10 mx-40">
-        <div className="flex mx-20 mb-2 mt-5 text-lg font-mono text-purple-900">
+        <div className="flex sm:mx-20 mb-2 mt-5 text-lg font-mono text-purple-900">
           {t("labels.addNewAdvert", SCOPE_OPTIONS)}
         </div>
       </div>

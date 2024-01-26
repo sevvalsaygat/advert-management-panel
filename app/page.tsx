@@ -10,7 +10,7 @@ export default function Home() {
   const { t } = useLocale();
 
   return (
-    <div className="mx-40">
+    <div className="sm:mx-40 mx-5">
       <div className="flex border-b my-10">
         <div className="flex mx-20 mb-2 mt-5 text-lg font-mono text-purple-900">
           {t("labels.homePageShowcase", SCOPE_OPTIONS)}
