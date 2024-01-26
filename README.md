@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ReactJS Advertisement Management Project
 
-## Getting Started
+-This is a React JS and Next JS-based advertisement management project that allows users to effectively manage their ads. The application is developed using Next.js and React.js, state management is handled with Zustand, and a modern UI is created using tailwindCSS. Users can add ads to favorites, sort them, increase favorite counts, delete ads, and add new advertisements. The homepage highlights the latest ads and provides users with an user-friendly interface.
 
-First, run the development server:
+## Demo Video
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![demovideo](docs/demo.mp4)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+After cloning the project, you can run it by following the steps below in the project's main directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    - npm install - Installs dependencies.
+    - npm run dev - Starts the application in development mode.
 
-## Learn More
+    or
 
-To learn more about Next.js, take a look at the following resources:
+    - yarn install - Installs dependencies.
+    - yarn dev - Starts the application in development mode.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once the project is successfully running, you can view the application by going to http://localhost:3000 in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Important Note!:
 
-## Deploy on Vercel
+Photos are encoded with base64, taking up significant space in localStorage and limiting the number of ads we can fetch due to exceeding the capacity of localStorage. This is not a systemic issue but rather a result of exceeding localStorage capacity.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-This project is developed to guide developers interested in understanding the concept of ad management. Happy coding! 🚀🎉
